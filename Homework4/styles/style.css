@@ -1,0 +1,154 @@
+* {
+    color: #093500;
+    font-size: 10px;
+    font-family: Tahoma;
+}
+body {
+    margin: 0 auto;
+    width: 675px;
+    height:100%;
+}
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+h1 b {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: normal;
+}
+#banner {
+    padding: 0 37px;
+    background: none #eeeefb;
+    height: 190px;
+}
+#banner h1 {
+    left: -47px;
+    top: 34px;
+    position: relative;
+    margin-bottom:20px;
+}
+#banner img {
+    float:left;
+}
+#banner .description {
+    margin-bottom: 13px;
+}
+#banner .content {
+    margin-left: 230px;
+    margin-top: 44px;
+}
+#banner .link-more {
+    margin-left: 15px;
+}
+h2.title {
+    padding-bottom: 19px;
+}
+h3 {
+    font-size: 11px;
+    color: #80a60f;
+}
+#header {
+    margin: 0 auto;
+    height: 78px;
+    width: 675px;
+    background: linear-gradient(to bottom, rgb(118, 151, 21), rgb(153, 204, 1));
+}
+
+#logo {
+    margin-left: 40px;
+    position: relative;
+    top: 50%;
+    margin-top:-25px;
+}
+nav {
+    height: 76px;
+    text-align: center;
+}
+nav ul li *{
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: lowercase;
+}
+nav ul li {
+    display:inline-block;
+    list-style: none;
+
+    line-height: 72px;
+}
+
+nav ul li::after, nav ul li::before {
+    margin: 0 26px;
+}
+nav ul li::after {
+    content: url('../images/separator.png');
+}
+nav ul li:last-child::after {
+    content: none;
+}
+#content {
+    padding-top:16px;
+    margin-bottom: 10px;
+}
+#left, #middle {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#left {
+    margin: 0 0 0 10px;
+    padding: 0 20px;
+    width: 205px;
+}
+
+#middle {
+    border-left: 2px solid #eeeefb;
+    padding: 0 10px;
+    width: 390px;
+}
+
+#middle .article {
+    width: 100%;
+    padding: 18px 0;
+    border-bottom: 2px solid #eeeefb;
+}
+
+#middle .article:first-child {
+    padding-top: 0;
+}
+
+#middle .article:last-child {
+    border:none;
+}
+#middle .article img {
+    margin-left: 10px;
+    margin-right: 20px;
+    float:left;
+}
+#footer {
+    padding: 0 10px;
+    border-top: 5px solid #eeeefb;
+    height: 66px;
+    line-height: 62px;
+}
+
+.description p {
+    padding-bottom: 16px;
+}
+
+.link-more {
+    display:block;
+    width: 9px;
+    height: 5px;
+    background: url('../images/arrow.png') no-repeat;
+    text-decoration: none;
+}
+.clear {
+    width:0;
+    height:0;
+    clear:both;
+}
