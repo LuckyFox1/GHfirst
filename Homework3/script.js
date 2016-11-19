@@ -1,25 +1,25 @@
-Array.prototype.myForEach = function (callback, arr) {
-    var length = arr.length;
+Array.prototype.myForEach = function (callback) {
+    var length = this.length;
     for (var i = 0; i < length; i++) {
-        callback(arr[i], i, arr);
+        callback(this[i], i, this);
     }
 };
 
-var arr = [1, 2, 3];
+var array = [1, 2, 3];
 
 function Func(a) {
     a *= 2;
     console.log(a);
 }
 
-arr.myForEach(Func, arr);
+array.myForEach(Func);
 
-Array.prototype.myMap = function (callback, arr) {
+Array.prototype.myMap = function (callback) {
     var tempArr = [],
         temp,
-        length = arr.length;
+        length = this.length;
     for (var i = 0; i < length; i++) {
-        temp = callback(arr[i], i, arr);
+        temp = callback(this[i], i, this);
         tempArr.push(temp);
     }
     return tempArr;
@@ -31,24 +31,23 @@ function lengthWords(el) {
     return el.length;
 }
 
-var newArr = arrString.myMap(lengthWords, arrString);
+var newArr = arrString.myMap(lengthWords);
 
 console.log(newArr);
 
-Array.prototype.mySort = function (arr, compareFunction) {
-    var length = arr.length,
+Array.prototype.mySort = function (compareFunction) {
+    var length = this.length,
         temp,
         i,
-        j,
-        test;
+        j;
 
-    if (compareFunction == undefined) {
+    if (!compareFunction) {
         for (i = length; i > 0; i--) {
             for (j = 1; j < i; j++) {
-                if ((arr[j] + "") < (arr[j - 1] + "")) {
-                    temp = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = temp;
+                if ((this[j] + "") < (this[j - 1] + "")) {
+                    temp = this[j];
+                    this[j] = this[j - 1];
+                    this[j - 1] = temp;
                 }
             }
         }
@@ -56,12 +55,10 @@ Array.prototype.mySort = function (arr, compareFunction) {
     else {
         for (i = length; i > 0; i--) {
             for (j = 1; j < i; j++) {
-                test = compareFunction(arr[j - 1] + "", arr[j] + "");
-
-                if (test > 0) {
-                    temp = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = temp;
+                if (compareFunction(this[j - 1] + "", this[j] + "") > 0) {
+                    temp = this[j];
+                    this[j] = this[j - 1];
+                    this[j - 1] = temp;
                 }
             }
         }
@@ -76,12 +73,12 @@ var arrNumber = [2, 4, 12, 1, 36, 6, 7, 99, 8, 67];
 var arrNumber2 = [2, 4, 12, 1, 36, 6, 7, 99, 8, 67];
 var arrRandomWords = ["asd", "erf", "ax", "acbg", "blaks"];
 
-arrNumber.mySort(arrNumber);
-arrRandomWords.mySort(arrRandomWords);
+arrNumber.mySort();
+arrRandomWords.mySort();
 
 console.log(arrNumber);
 console.log(arrRandomWords);
 
-arrNumber.mySort(arrNumber2, compareNumbers);
+arrNumber2.mySort(compareNumbers);
 console.log(arrNumber2);
 
