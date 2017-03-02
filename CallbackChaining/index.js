@@ -1,5 +1,4 @@
 function perform(nonce, cb) {
-	//TODO implement
 	var q = [];
 	
 	var next = function(param) {
